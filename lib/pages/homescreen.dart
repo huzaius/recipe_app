@@ -124,50 +124,6 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
           ],
         ),
       ),
-      bottomSheet: Container(
-        height: 80,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [BoxShadow(color: Colors.black12, spreadRadius: 1)],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: List.generate(icons.length, (index) {
-            return GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedPage = index;
-                });
-              },
-              child: SizedBox(
-                height: 40,
-                width: 40,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Icon(
-                      icons[index],
-                      color: index == selectedPage ? Colors.green : Colors.grey,
-                      size: 28,
-                    ),
-                    index == selectedPage
-                        ? Container(
-                            height: 3,
-                            width: 30,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.grey,
-                            ),
-                          )
-                        : SizedBox(),
-                  ],
-                ),
-              ),
-            );
-          }),
-        ),
-      ),
     );
   }
 

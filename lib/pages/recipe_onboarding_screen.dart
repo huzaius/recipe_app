@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/pages/bottomnav_screen.dart';
 
 import '../utils/utils.dart';
-import 'homescreen.dart';
 
 class RecipeOnBoardingScreen extends StatefulWidget {
   const RecipeOnBoardingScreen({super.key});
@@ -71,7 +71,9 @@ class _RecipeOnBoardingScreenState extends State<RecipeOnBoardingScreen> {
                     onTap: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => MyHomeScreen()),
+                        MaterialPageRoute(
+                          builder: (context) => BottomnavScreen(),
+                        ),
                       );
                     },
 
