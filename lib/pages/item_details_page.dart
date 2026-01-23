@@ -3,8 +3,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:recipe_app/models/recipe_model.dart';
 
-import 'package:recipe_app/utils/circular_percentage_indicator.dart';
-import 'package:recipe_app/utils/my_clipper.dart';
+import 'package:recipe_app/utils/widgets/circular_percentage_indicator.dart';
+import 'package:recipe_app/utils/widgets/my_clipper.dart';
 
 import '../models/ingredients.dart';
 

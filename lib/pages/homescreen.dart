@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:recipe_app/pages/item_details_page.dart';
+import 'package:recipe_app/utils/common/my_searchbar.dart';
+import 'package:recipe_app/utils/common/page_header.dart';
+import 'package:recipe_app/utils/common/text_app_bar.dart';
 
 import '../models/categories_recipe.dart';
 import '../models/recipe_model.dart';
@@ -30,30 +33,24 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            headerPart(),
-            mySearchField(),
-            SizedBox(height: 20),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Popular Menus",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    "See all",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.green,
-                    ),
-                  ),
-                ],
-              ),
+            // Header Part
+            appHeader(
+              name: "Gynak",
+              avatarImage: 'assets/user.png',
+              context: context,
             ),
+
+            // SearchField
+            mySearchBar(),
             SizedBox(height: 20),
+
+            //
+
+            // Popular Menu and See all
+            textAppBar(),
+            SizedBox(height: 20),
+
+            // Popular Menu Items
             popularMenuItems(),
             SizedBox(height: 20),
             menuItemView(context),
@@ -298,9 +295,9 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      selectedIndex == index ? Colors.green : Colors.white,
+                      selectedIndex == index ? Colors.teal : Colors.white,
                       selectedIndex == index
-                          ? Colors.greenAccent
+                          ? Colors.teal.shade200
                           : Colors.white,
                     ],
                   ),
@@ -319,79 +316,6 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Padding mySearchField() {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(35),
-          color: Colors.white,
-        ),
-        child: TextField(
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            prefixIcon: Icon(Iconsax.search_normal, color: Colors.black45),
-            hintText: "Search Food",
-            hintStyle: TextStyle(color: Colors.black26),
-            contentPadding: EdgeInsets.symmetric(vertical: 20),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Padding headerPart() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text.rich(
-            TextSpan(
-              children: [
-                TextSpan(
-                  text: "Hello, Gynak\n",
-                  style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black45,
-                  ),
-                ),
-                TextSpan(
-                  text: "What do you want to eat today?\n",
-                  style: TextStyle(fontSize: 13, color: Colors.black45),
-                ),
-              ],
-            ),
-          ),
-          Spacer(),
-          Stack(
-            children: [
-              CircleAvatar(
-                radius: 20,
-                backgroundColor: Colors.white,
-                backgroundImage: AssetImage('assets/user.png'),
-              ),
-              Positioned(
-                right: 1,
-                top: 1,
-                child: Container(
-                  height: 9,
-                  width: 9,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: Colors.white),
-                    color: Colors.green,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
       ),
     );
   }

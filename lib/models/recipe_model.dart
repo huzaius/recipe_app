@@ -9,9 +9,9 @@ List<String> menuItems = [
 ];
 
 class RecipeItems {
-  final String image, name, owner, ownerName, review;
-  final int weight;
-  final double rate;
+  final String image, name, owner, ownerName, review, description;
+  final int weight, price;
+  final double rate, duration;
   final Map<String, dynamic> calorie, fat, protein, carb;
 
   final bool fav;
@@ -29,6 +29,9 @@ class RecipeItems {
     required this.protein,
     required this.weight,
     required this.fav,
+    required this.price,
+    required this.duration,
+    required this.description,
   });
 }
 
@@ -71,6 +74,10 @@ List<RecipeItems> recipeItems = [
       'color': Colors.red,
       'data': 0.25,
     },
+    price: 15,
+    duration: 1.5,
+    description:
+        'Logoi psum is the ultimate Figma plugin for adding free, high-quality placeholder logos to your designs with just one click.',
   ),
   RecipeItems(
     image: 'assets/mushroom salad.png',
@@ -110,6 +117,10 @@ List<RecipeItems> recipeItems = [
       'color': Colors.red,
       'data': 0.1,
     },
+    price: 20,
+    duration: 2.0,
+    description:
+        'Logoipsum is the ultimate Figma plugin for adding free, high-quality placeholder logos to your designs with just one click',
   ),
   RecipeItems(
     image: 'assets/grilled-chicken-salad.jpg',
@@ -149,6 +160,10 @@ List<RecipeItems> recipeItems = [
       'color': Colors.red,
       'data': 0.1,
     },
+    price: 22,
+    duration: .5,
+    description:
+        'Logoipsum is the ultimate Figma plugin for adding free, high-quality placeholder logos to your designs with just one click.',
   ),
   RecipeItems(
     image: 'assets/thai salad.png',
@@ -158,6 +173,8 @@ List<RecipeItems> recipeItems = [
     review: '52',
     ownerName: "Hari Prasad",
     weight: 200,
+    description:
+        'Logoipsum is the ultimate Figma plugin for adding free, high-quality placeholder logos to your designs with just one click.',
     calorie: {
       'name': "Calorie",
       'amount': 120,
@@ -188,5 +205,7 @@ List<RecipeItems> recipeItems = [
       'color': Colors.red,
       'data': 0.2,
     },
+    price: 15,
+    duration: 4,
   ),
 ];

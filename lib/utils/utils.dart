@@ -7,5 +7,5 @@ const textGreen = Color(0xFF50bf6e);
 const gradientColor = LinearGradient(
   begin: Alignment.topCenter,
   end: Alignment.bottomCenter,
-  colors: [Colors.green, Colors.greenAccent],
+  colors: [Colors.teal, Colors.tealAccent],
 );
